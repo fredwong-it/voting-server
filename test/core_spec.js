@@ -1,6 +1,6 @@
 import {List, Map} from 'immutable';
 import {expect} from 'chai';
-import {setEntries, next, vote} from '../src/core.js'
+import {setEntries, next, vote} from '../src/core';
 
 describe('application logic', () => {
     describe('setEntries', () => {
@@ -109,7 +109,7 @@ describe('application logic', () => {
                     pair: List.of('book', 'apple')
                 }),
                 entries: List()
-            })
+            });
 
             const nextState = vote(state, 'book');
 
@@ -129,8 +129,8 @@ describe('application logic', () => {
                 vote: Map({
                     pair: List.of('book', 'apple'),
                     tally: Map({
-                        'book': 1,
-                        'apple': 2
+                        'book': 4,
+                        'apple': 1
                     })
                 }),
                 entries: List()
@@ -142,8 +142,8 @@ describe('application logic', () => {
                 vote: Map({
                     pair: List.of('book', 'apple'),
                     tally: Map({
-                        'book': 1,
-                        'apple': 3
+                        'book': 4,
+                        'apple': 2
                     })
                 }),
                 entries: List()
